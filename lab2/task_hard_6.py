@@ -1,6 +1,6 @@
-o = int(input("Год нашей эры? 1 - да / 0 - нет:"))
+k = int(input("Год нашей эры? 1 - да / 0 - нет:"))
 den, mes, g = int(input("День: ")), int(input("Месяц: ")), int(input("Год: "))
-if o == 1:
+if k == 1:
     ## a = 2000
     b = 776
     c = g + b
@@ -16,4 +16,4 @@ if mes < 7:
     d -= 1
     e = 4
 
-print (f'{d}.{e}')
+print (f'День: {den}, месяцx: {mes}, год: {d}.{e}')

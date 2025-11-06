@@ -1,5 +1,11 @@
 ch = int(input('Число: '))
+i = 2
+print(f"Простые множетели числа {ch}:", end = " ")
 
-if ch % 2:
-    if ch / 3 == 0:
-        ch 
+while i <= ch:
+    if ch % i == 0:
+        print(i, end = " ")
+        ch //= i
+    else:
+        i += 1
+
