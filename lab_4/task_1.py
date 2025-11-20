@@ -1,11 +1,30 @@
 import numpy as np
-input_string = input()
-my_array = np.array(list(map(int, input_string.split())))
+import math
 
-def srednee_arifm():
+rows = int(input("Введите количество строк: "))
+cols = int(input("Введите количество столбцов: "))
 
-    print(a)
+print("\nВведите элементы первого массива:")
+A = np.array([[float(input(f"A[{i}][{j}] = ")) for j in range(cols)] for i in range(rows)])
+
+
+def srednee_arifm(A):
+    for i in range(rows * cols):
+        ch = 0
+        
+        str = 0
+        stl = 1
+        
+        ch += int(A[str:stl:1])
+        
+        #while stl <= cols:
+           # str +=1
+           # if stl == cols:
+               # str +=1
+    print(ch)
+
+
+srednee_arifm(A)
 
 
 
-print(my_array)
