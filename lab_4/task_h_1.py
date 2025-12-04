@@ -1,14 +1,8 @@
-a, n = int(input('a: ')), int(input('n: ')) 
+school_journal = {'math' : 'Dan'}
+
+
+##def  add_subjects():
 
 
 
-def stepen (a,n):
-    ch = a
-    for i in range(n - 1):
-        ch *= a
-    print(ch)
-    return ch
-
-
-stepen(a, n)
-    
+print (school_journal)
