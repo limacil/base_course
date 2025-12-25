@@ -4,7 +4,7 @@ from matplotlib.animation import FuncAnimation
 
 
 def circle_move(R, vx0, vy0, time):
-    x0 = vx0 * time
+    x0 = vx0 * time + 1
     y0 = vy0 * time
     alpha = np.arange(0, 2*np.pi, 0.1)
     x = x0 + R*np.cos(alpha)

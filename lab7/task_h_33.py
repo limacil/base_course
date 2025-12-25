@@ -3,13 +3,17 @@ import numpy as np
 from matplotlib.animation import FuncAnimation
 
 
-def circle_move(R, vx0, vy0, time):
-    x0 = vx0 * time
-    y0 = vy0 * time
-    alpha = np.arange(0, 2*np.pi, 0.1)
-    x = x0 + R*np.cos(alpha)
-    y = y0 + R*np.sin(alpha)
-    return x, y
+def circle_move(t):
+    x0 = 0
+    y0 = 0
+    x = 12 * np.cos(t) + 8 * np.cos(1,5 * t)
+    y = 12 * np.sin(t) + 8 * np.sin(1,5 * t)
+    
+    a = np.arange(0, 2*np.pi, 0.1)
+    
+    X = x0 + x * np.cos(a) - y * np.cos(a)
+    Y = y0 + y * np.cos(a) + x * np.sin(a)
+    return X, Y
 
 
 fig, ax = plt.subplots()
@@ -17,14 +21,13 @@ ball, = plt.plot([], [], 'o', color='r', label='Ball')
 
 
 def animate(i):
-    ball.set_data(circle_move(R=0.5, vx0=0.01, vy0=0.01, time=i))
+    ball.set_data(circle_move(t = 0.4 * np.pi, time=i))
     return ball
    
 
-edge = 3
 plt.axis('equal')
-ax.set_xlim(-edge, edge)
-ax.set_ylim(-edge, edge)
+ax.set_xlim(-25, 25)
+ax.set_ylim(-25, 25)
 
 ani = FuncAnimation(fig, animate, frames=100, interval=30)
 ani.save('task_H_3.gif', writer="pillow")

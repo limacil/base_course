@@ -4,11 +4,12 @@ from matplotlib.animation import FuncAnimation
 
 
 def star_move(t, x0=0, y0=0, a=0):
-    x = 12 * np.cos(t) + 8 * np.cos(1,5 * t)
-    y = 12 * np.sin(t) + 8 * np.sin(1,5 * t)
-    
-    X = x0 + x * np.cos(a) - y * np.cos(a)
-    Y = y0 + y * np.cos(a) + x * np.sin(a)
+    x = 10 * np.cos(t)**3
+    y = 10 * np.sin(t)**3
+
+
+    X = x0 + (x+10) * np.cos(a) - (y-10) * np.sin(a)
+    Y = y0 + (x-10) * np.sin(a) + (y+10) * np.cos(a)
 
     return X, Y
 
