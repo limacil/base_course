@@ -8,8 +8,8 @@ def star_move(t, x0=0, y0=0, a=0):
     y = 10 * np.sin(t)**3
 
 
-    X = x0 + (x+10) * np.cos(a) - (y-10) * np.sin(a)
-    Y = y0 + (x-10) * np.sin(a) + (y+10) * np.cos(a)
+    X = x0 + (x) * np.cos(a) - (y) * np.sin(a)
+    Y = y0 + (x) * np.sin(a) + (y) * np.cos(a)
 
     return X, Y
 
