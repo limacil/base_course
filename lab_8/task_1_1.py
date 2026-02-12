@@ -32,6 +32,5 @@ for eta in np.arange(0, 2*np.pi, 0.1):
 
     ax.set_title('3D Test')
 
-    # plt.show()
     plt.savefig(f'frame_{frame}.png')
     frame += 1

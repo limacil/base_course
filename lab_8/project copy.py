@@ -8,6 +8,16 @@ N = 50
 frame = 0
 edge = 40
 
+def animate(R):
+    for eta in np.arange(0, 2*np.pi, 0.1):
+        x = np.outer(phi, np.cos(theta))
+        y = np.outer(phi, np.sin(theta))
+        z = np.outer(phi**2, np.ones(len(theta))) * np.sin(eta)
+    return x, y, z
+
+
+
+
 for eta in np.arange(0, 2*np.pi, 0.1):
     # Создание 3D-пространства
     fig, ax = plt.subplots(subplot_kw={"projection":"3d"})
