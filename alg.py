@@ -33,15 +33,6 @@ s0 = (x0, v_x0, y0, v_y0)
 
 sol = odeint(move_func, s0, t)
 
-# Решаем систему диф. уравнений
-def solve_func(i, key):
-    if key == 'point':
-        x = sol[i, 0]
-        y = sol[i, 2]
-    else:
-        x = sol[:i, 0]
-        y = sol[:i, 2]
-    return x, y
   
 # Строим решение в виде графика и анимируем
 fig, ax = plt.subplots()
@@ -52,8 +43,8 @@ plt.plot([0], [0], 'o', color='y', ms=20)
 
 
 def animate(i):
-    ball.set_data(solve_func(i, 'point'))
-    ball_line.set_data(solve_func(i, 'line'))
+    ball.set_data((i, 'point'))
+    ball_line.set_data((i, 'line'))
 
 
 ani = FuncAnimation(fig, animate, frames=frames, interval=30)
