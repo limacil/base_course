@@ -140,7 +140,7 @@ for i in range(3):
 
 def animate(i):
     for j in range(3):
-        balls[j][0].set_data(sol[i, 4*j], sol[i, 4*j+2])
+        balls[j][0].set_data(sol[[i, 4*j]], sol[[i, 4*j+2]])
         balls_lines[j][0].set_data(sol[:i, 4*j], sol[:i, 4*j+2])
 
 ani = FuncAnimation(fig, animate, frames=frames, interval=30)
@@ -150,4 +150,4 @@ edge = 2 * x10
 ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
-ani.save('lec_13_N_body.gif')
+ani.save('lec_zadacha_N_tel.gif')
