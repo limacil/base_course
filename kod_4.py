@@ -31,3 +31,47 @@ plt.xlabel("x")
 plt.ylabel("z")
 plt.savefig("kod_4.png")
 
+
+
+
+import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+# Определяем переменную величину
+t = np.arange(0, 10, 0.01)
+
+
+# Определяем функцию для системы диф. уравнений
+def diff_func(z, t): # z - изменяемая величина для системы  
+    q, u, h, sigma_z, sigma_y = z # Указание изменяемых функций, через z
+	
+    C = (q / (2 * np.pi * sigma_y * sigma_z * u)) * (
+    np.exp(-(Z - h)**2 / sigma_z**2) +
+    np.exp(-(Z + h)**2 / sigma_z**2)
+    
+    return C
+
+
+# Определяем начальные значения и параметры,
+# входящие в систему диф. уравнений
+
+q = 10      # мощность источника
+u = 2       # ветер
+h = 20      # высота
+sigma_z = 0.1 * X
+sigma_y = 0.1 * X
+
+# Начальное значение изменяемой величины системы
+z0 = q, u, h, sigma_z, sigma_y
+ 
+
+
+# Решаем систему диф. уравнений
+sol = odeint(diff_func, z0, t)
+
+# Строим решение в виде графика
+plt.plot(t, sol[:, 0], 'b', label='theta(t)')
+
+plt.legend()
+plt.savefig("kod_4.png")
