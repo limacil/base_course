@@ -22,8 +22,8 @@ def animate(i):
 if __name__ == '__main__':
     plt.plot(iksi, igriki, color = 'black', ms = 8)
     plt.plot([0, 6], [0, 0], color = 'black', ms = 8)
+    plt.axis('equal')
     
-
     fig, ax = plt.subplots()
     ball, = plt.plot([], [], 'o', color='r', label='Ball')
 
